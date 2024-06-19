@@ -1,5 +1,5 @@
 {% set name = "gridemissions" %}
-{% set version = "0.1.3" %}
+{% set version = "0.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gridemissions-{{ version }}.tar.gz
-  sha256: 6e9beba1971147de37858dead8ec9c78f2bb5a79952303596056f3ebac145703
+  sha256: 4ffb84a4ee8f45dff536f7ba84922a8303131fb631e448a670b7ef9b27f4ad76
 
 build:
   entry_points:
