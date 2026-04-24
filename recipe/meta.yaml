@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gridemissions-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gridemissions-{{ version }}.tar.gz
   sha256: 425f8816b0c173fdb92704e7a27b472be24fa9d9f83a8eaa7d80727a8fe1942d
 
 build:
@@ -17,14 +17,14 @@ build:
     - ampd=gridemissions.scripts.ampd:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - requests
     - pandas >=2.0
     - matplotlib-base >=3.4.2
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/jdechalendar/gridemissions/
